@@ -19,7 +19,7 @@
 	<https://www.gnu.org/licenses/>.
 */
 
-#include "multiplo.h"
+#include "multiple.h"
 
 // obtener multiplos de un numero
 int * ObtenerMultiplos(int num, int nbelems)
