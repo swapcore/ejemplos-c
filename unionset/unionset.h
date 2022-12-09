@@ -34,5 +34,6 @@ CONJUNTO * InitConjunto();
 int AddConjunto(CONJUNTO *pset, int value);
 CONJUNTO * UnirConjunto(CONJUNTO *set1, CONJUNTO *set2);
 void ReleaseConjunto(CONJUNTO *c);
+CONJUNTO * InterseccionConjunto(CONJUNTO *set1, CONJUNTO *set2);
 
 #endif

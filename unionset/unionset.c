@@ -104,6 +104,39 @@ CONJUNTO * UnirConjunto(CONJUNTO *set1, CONJUNTO *set2)
 	return uset;
 }
 
+// intersección de conjuntos
+CONJUNTO * InterseccionConjunto(CONJUNTO *set1, CONJUNTO *set2)
+{
+	CONJUNTO *iset;
+	int a,b;
+	
+	// verificar parametros
+	if(!(set1&&set2)) {
+		return NULL;
+	}
+	
+	// crear conjunto intersección de set1 y set2
+	if(!(iset=InitConjunto())) {
+		return NULL;
+	}
+	
+	if(!set1->nums&&!set2->nums) {
+		// retornar conjunto nulo
+		return iset;
+	}
+	
+	// obtener intersección de conjuntos
+	for(a=0; a<set1->elements; a++) {
+		for(b=0; b<set2->elements; b++) {
+			if(set1->nums[a]==set2->nums[b]) {
+				AddConjunto(iset,set1->nums[a]);
+			}
+		}
+	}
+
+	return iset;
+}
+
 // liberar conjunto
 void ReleaseConjunto(CONJUNTO *c)
 {
