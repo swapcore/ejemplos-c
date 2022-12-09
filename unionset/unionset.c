@@ -27,8 +27,7 @@ CONJUNTO * InitConjunto()
 	CONJUNTO * newset;
 	
 	// reservar memoria para el conjunto
-	newset=malloc(sizeof(CONJUNTO));
-	if(!newset) {
+	if(!(newset=malloc(sizeof(CONJUNTO)))) {
 		return NULL;
 	}
 	
@@ -42,32 +41,14 @@ CONJUNTO * InitConjunto()
 int AddConjunto(CONJUNTO *pset, int value)
 {
 	int *c;
-	int isfound=0;
-	int a;
 	
 	// verificar parametro
 	if(!pset) {
 		return 0;
 	}
 	
-	// buscar valor en el conjunto
-	if(pset->nums) {
-		for(a=0; a<pset->elements; a++) {
-			if(pset->nums[a]==value) {
-				isfound=1;
-				break;
-			}
-		}	
-	}
-	
-	if(isfound) {
-		// el valor ya se encuentra en el conjunto
-		return 0;
-	}
-	
 	// reasignar memoria para el conjunto
-	c=realloc(pset->nums,
-		(pset->elements+1)*sizeof(int));
+	c=realloc(pset->nums,(pset->elements+1)*sizeof(int));
 	if(!c) {
 		// error de asignación de memoria
 		free(pset->nums);
@@ -99,13 +80,12 @@ CONJUNTO * UnirConjunto(CONJUNTO *set1, CONJUNTO *set2)
 	}
 	
 	if(!set1->nums&&!set2->nums) {
-		// no har elementos para insertar a la unión
+		// no har elementos para insertar en la unión
 		return NULL;
 	}
 	
 	// crear conjunto unión de set1 y set2
-	uset=InitConjunto();
-	if(!uset) {
+	if(!(uset=InitConjunto())) {
 		return NULL;
 	}
 	
@@ -120,9 +100,6 @@ CONJUNTO * UnirConjunto(CONJUNTO *set1, CONJUNTO *set2)
 		for(a=0; a<set2->elements; a++)
 			AddConjunto(uset, set2->nums[a]);
 	}
-	
-	// actualizar nummero de elementos
-	uset->elements = set1->elements + set2->elements;
 	
 	return uset;
 }
