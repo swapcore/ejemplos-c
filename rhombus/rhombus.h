@@ -33,5 +33,6 @@ typedef struct TagRhombusStruct {
 }RHOMBUSSTRUCT;
 
 RHOMBUSSTRUCT * CreateRhombus(int height);
+void ReleaseRhombus(RHOMBUSSTRUCT *r);
 
 #endif

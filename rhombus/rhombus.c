@@ -79,3 +79,12 @@ RHOMBUSSTRUCT * CreateRhombus(int height)
 
 	return rhombus;
 }
+
+// liberar rombo
+void ReleaseRhombus(RHOMBUSSTRUCT *r)
+{
+	if(r) {
+		free(r->bmpixels);
+		free(r);
+	}
+}
