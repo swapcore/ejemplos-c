@@ -20,3 +20,7 @@
 # rhombus
 run_rhombus:
 	gcc -o rhombus run/run_rhombus.c rhombus/rhombus.c
+
+# textrect
+run_textrect:
+	gcc -o textrect run/run_textrect.c textrect/textrect.c

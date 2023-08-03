@@ -22,7 +22,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "textrect/textrect.h"
+#include "../textrect/textrect.h"
 
 // guardar texto en rectangulo
 void SaveTextInRext(const char *message, const char *filename)
