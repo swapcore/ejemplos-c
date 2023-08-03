@@ -21,7 +21,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "rhombus/rhombus.h"
+#include "../rhombus/rhombus.h"
 
 #define INVERT4BYTES(v) (v>>24)|((v&0xFF0000)>>8)|((v&0xFF00)<<8)|(v<<24)
 
@@ -145,7 +145,7 @@ void PrintHelp()
 {
 	printf(
 		"Uso:\n\n"
-		"drwrhombus <altura> [<archivo> [-bin_output|-txt_output]]\n"
+		"rhombus <altura> [<archivo> [-bin_output|-txt_output]]\n"
 		"\n"
 		"Parametros:\n\n"
 		"   altura        Altura del rombo.\n"

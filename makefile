@@ -16,3 +16,7 @@
 #	You should have received a copy of the GNU General Public License
 #	along with Ejemplos C. If not, see 
 #	<https://www.gnu.org/licenses/>.
+
+# rhombus
+run_rhombus:
+	gcc -o rhombus run/run_rhombus.c rhombus/rhombus.c
