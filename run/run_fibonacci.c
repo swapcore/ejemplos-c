@@ -1,5 +1,5 @@
 /*
-	Serie de fibonacci
+	Serie de fibonacci (Ejemplo de uso)
 	Copyright (c) 2022 Oscar Elías
 	
 	This file is part of Ejemplos C.
@@ -19,20 +19,36 @@
 	<https://www.gnu.org/licenses/>.
 */
 
-#ifndef _FIBONACCI_H_
-#define _FIBONACCI_H_
+#include <stdio.h>
+#include "../fibonacci/fibonacci.h"
 
-#define LIMIT_FIBONACCI_NUMBERS 45
+int main(int argc, char ** argv)
+{
+	FIBONACCISTRUCT *f;
+	int a;
 
-#include <stdlib.h>
-#include <stdint.h>
+	printf("Serie de fibonacci\n");
+	printf("Copyright (c) 2022 Oscar Elias\n\n");
 
-typedef struct TagFibonacciStruct {
-	size_t nbelems;
-	uint32_t lastvalue;
-	uint32_t elements[2];
-}FIBONACCISTRUCT;
+	if(argc<2) {
+		printf("Uso: fibonacci <longitud>\n");
+		return 0;
+	}
 
-FIBONACCISTRUCT * GetFibonacci(int elems);
+	if(!(f=GetFibonacci(atoi(argv[1])))) {
+		printf("ERROR: no se puedo crear la serie de fibonacci");
+		return 0;
+	}
 
-#endif
+	printf("SERIE DE FIBONACCI\n\n");
+	for(a=0; a<f->nbelems; a++) {
+		printf("[%i] -> %i\n",a+1,f->elements[a]);
+	}
+
+	printf("\n%i elementos\nUltimo valor: %i\n",
+		f->nbelems,f->lastvalue);
+	
+	free(f);
+
+	return 0;
+}

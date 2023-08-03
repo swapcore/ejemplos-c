@@ -28,3 +28,7 @@ run_textrect:
 # romanconv
 run_romanconv:
 	gcc -o romanconv run/run_romanconv.c romanconv/romanconv.c
+
+# fibonacci
+run_fibonacci:
+	gcc -o fibonacci run/run_fibonacci.c fibonacci/fibonacci.c
