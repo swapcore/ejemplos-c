@@ -24,3 +24,7 @@ run_rhombus:
 # textrect
 run_textrect:
 	gcc -o textrect run/run_textrect.c textrect/textrect.c
+
+# romanconv
+run_romanconv:
+	gcc -o romanconv run/run_romanconv.c romanconv/romanconv.c
