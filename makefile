@@ -1,5 +1,5 @@
 #	Makefile de Ejemplos C
-#	Copyright (c) 2022 Oscar Elías
+#	Copyright (c) 2022 Oscar Elï¿½as
 #	
 #	This file is part of Ejemplos C.
 #	
@@ -32,3 +32,7 @@ run_romanconv:
 # fibonacci
 run_fibonacci:
 	gcc -o fibonacci run/run_fibonacci.c fibonacci/fibonacci.c
+
+# tempconv
+run_tempconv:
+	gcc -o tempconv run/run_tempconv.c tempconv/tempconv.c

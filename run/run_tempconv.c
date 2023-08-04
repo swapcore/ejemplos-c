@@ -1,5 +1,5 @@
 /*
-	Conversor de temperatura
+	Conversor de temperatura (Ejemplo de uso)
 	Copyright (c) 2022 Oscar Elías
 	
 	This file is part of Ejemplos C.
@@ -19,17 +19,34 @@
 	<https://www.gnu.org/licenses/>.
 */
 
-#ifndef _TEMPCONV_H_
-#define _TEMPCONV_H_
-
+#include <stdio.h>
 #include <stdlib.h>
 
-typedef struct tagTempScale {
-	float sclcelsius;
-	float sclfahrenheit;
-	float sclkelvin;
-}TEMPSCALE;
+#include "../tempconv/tempconv.h"
 
-TEMPSCALE * GetTempScale(float *temp);
+int main(int argc, char ** argv)
+{
+	TEMPSCALE *scale;
+	float value;
 
-#endif
+	printf("Conversor de temperatura\n");
+	printf("Copyright (c) 2022 Oscar Elias\n\n");
+
+	if(argc<2) {
+		printf("Uso: tempconv <valor_en_grados_celsius>\n");
+		return 0;
+	}
+
+	value=(float)(atof(argv[1]));
+
+	if(!(scale=GetTempScale(&value))) {
+		return 0;
+	}
+
+	printf("%.2f *C -> %.2f *K -> %.2f *F\n",
+		scale->sclcelsius,
+		scale->sclkelvin,
+		scale->sclfahrenheit);
+
+	return 0;
+}
