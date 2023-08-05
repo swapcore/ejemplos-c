@@ -36,3 +36,7 @@ run_fibonacci:
 # tempconv
 run_tempconv:
 	gcc -o tempconv run/run_tempconv.c tempconv/tempconv.c
+
+# score
+run_score:
+	gcc -o score run/run_score.c score/score.c

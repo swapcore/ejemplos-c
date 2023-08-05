@@ -38,4 +38,6 @@ typedef struct TagScoreInfo {
 	double lowrating;    // calificaion mas baja
 }SCOREINFO;
 
+SCOREINFO * GetScoreInfo(double *list, size_t elems);
+
 #endif
