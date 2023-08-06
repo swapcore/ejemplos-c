@@ -1,6 +1,6 @@
 /*
-	Información de resistor
-	Copyright (c) 2022 Oscar Elías
+	Informaciï¿½n de resistor
+	Copyright (c) 2022 Oscar Elï¿½as
 	
 	This file is part of Ejemplos C.
 	
@@ -55,8 +55,17 @@ typedef struct TagResistorInfo {
 	COLORBAND bands[1];    // bandas de color
 }RESISTORINFO;
 
+typedef struct TagSMBResistorInfo {
+	int type;              // tipo de resistor
+	double number;         // numero resultante del codigo impreso
+	double multiplier;     // multiplicador
+	double value;          // valor de la resistencia (en ohms)
+}SMBRESISTORINFO;
+
+double GetMultiplier(int color);
 double GetTolerance(int color);
 int VerifyResistor(COLORBAND *bands, int numbands);
 RESISTORINFO * GetResistorInfo(COLORBAND *bands, int numbands);
+SMBRESISTORINFO * GetSMBResistorInfo(const char *code);
 
 #endif

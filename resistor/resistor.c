@@ -21,6 +21,28 @@
 
 #include "resistor.h"
 
+// obtener multiplicador
+double GetMultiplier(int color)
+{
+	switch(color) {
+		case BLACK_BAND:  return pow(10,0.00);
+		case BROWN_BAND:  return pow(10,1.00);
+		case RED_BAND:    return pow(10,2.00);
+		case ORANGE_BAND: return pow(10,3.00);
+		case YELLOW_BAND: return pow(10,4.00);
+		case GREEN_BAND:  return pow(10,5.00);
+		case BLUE_BAND:   return pow(10,6.00);
+		case VIOLET_BAND: return pow(10,7.00);
+		case GREY_BAND:   return pow(10,8.00);
+		case WHITE_BAND:  return pow(10,9.00);
+		case GOLD_BAND:   return pow(10,-1.00);
+		case SILVER_BAND: return pow(10,-2.00);
+		case PINK_BAND:   return pow(10,-3.00);
+	}
+
+	return 0;
+}
+
 // Obtener tolerancia del resistor
 double GetTolerance(int color)
 {
@@ -39,6 +61,8 @@ double GetTolerance(int color)
 		case SILVER_BAND: return 10.00;
 		case PINK_BAND:   return 0.00;
 	}
+
+	return 0;
 }
 
 // verificar resistor
@@ -101,7 +125,7 @@ RESISTORINFO * GetResistorInfo(COLORBAND *bands, int numbands)
 		case 4: {
 			r->number     += (double)(bands[0])*10.00;
 			r->number     += (double)(bands[1]);
-			r->multiplier  = (double)(bands[2]);
+			r->multiplier  = GetMultiplier((double)(bands[2]));
 			r->tolerance   = GetTolerance(bands[3]);
 			break;
 		}
@@ -110,17 +134,73 @@ RESISTORINFO * GetResistorInfo(COLORBAND *bands, int numbands)
 			r->number     += (double)(bands[0])*100.00;
 			r->number     += (double)(bands[1])*10.00;
 			r->number     += (double)(bands[2]);
-			r->multiplier  = (double)(bands[3]);
+			r->multiplier  = GetMultiplier((double)(bands[3]));
 			r->tolerance   = GetTolerance(bands[4]);
 			break;
 		}
 	}
-	
-	// obtener el valor del resistor
-	r->value = r->number*pow(10,r->multiplier);
+
+	// obtener valor del resistor en ohms:
+	r->value = r->number*r->multiplier;
 	
 	// copiar bandas de color
 	memcpy(r->bands,bands,numbands*sizeof(COLORBAND));
 	
+	return r;
+}
+
+// obtener informacion de resistor SMB
+SMBRESISTORINFO * GetSMBResistorInfo(const char *code)
+{
+	SMBRESISTORINFO *r;
+	char temp[10]={0};
+	char *ptr;
+	double cf[4];
+	int len,a;
+
+	len=strlen(code);
+
+	if(!(len==3||len==4)) {
+		return NULL;
+	}
+
+	// reservar memoria para la información del resistor
+	if(!(r=calloc(1,sizeof(SMBRESISTORINFO)))) {
+		return NULL;
+	}
+
+	if(strchr(code,'R')) {
+		// valor de resistencia de coma flotante
+		memcpy(temp,code,len);
+		ptr=strchr(temp,'R');
+		ptr[0]='.';
+
+		r->value=atof(temp);
+	}
+	else {
+		// obtener cifras significativas
+		for(a=0; a<len; a++) {
+			temp[0]=code[a];
+			temp[1]='\0';
+
+			cf[a]=(double)(atoi(temp));
+		}
+
+		// resistencia SMB de 3 cifras significativas
+		if(len==3) {
+			r->value += cf[0]*10.00;
+			r->value += cf[1];
+			r->value *= pow(10,cf[2]);
+		}
+
+		// resistencia SMB de 4 cifras significativas
+		if(len==4) {
+			r->value += cf[0]*100.00;
+			r->value += cf[1]*10.00;
+			r->value += cf[2];
+			r->value *= pow(10,cf[3]);
+		}
+	}
+
 	return r;
 }

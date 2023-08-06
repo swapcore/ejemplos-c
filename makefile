@@ -40,3 +40,7 @@ run_tempconv:
 # score
 run_score:
 	gcc -o score run/run_score.c score/score.c
+
+# resitor
+run_resistor:
+	gcc -o resistor run/run_resistor.c resistor/resistor.c
