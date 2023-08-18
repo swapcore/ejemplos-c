@@ -25,7 +25,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-char * CharABinario(char ch);
-char * TextoABinario(const char * text, size_t len);
+char * CharToBin(int ch);
+char * TextToBin(const char * text, size_t len);
 
 #endif

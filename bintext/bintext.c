@@ -19,10 +19,10 @@
 	<https://www.gnu.org/licenses/>.
 */
 
-#include "textobin.h"
+#include "bintext.h"
 
 // obtenter representación binaria de un caracter
-char * CharABinario(char ch)
+char * CharToBin(int ch)
 {
 	char *chbin;
 	int a;
@@ -35,14 +35,14 @@ char * CharABinario(char ch)
 	
 	// obtenter representación del caracter
 	for(a=0; a<8; a++) {
-		itoa((ch&(1<<a))>>a,chbin+a,10);
+		itoa((ch>>(7-a))&1,chbin+a,10);
 	}
 	
 	return chbin; 
 }
 
 // obtenter representación binaria de un texto
-char * TextoABinario(const char * text, size_t len)
+char * TextToBin(const char * text, size_t len)
 {
 	char *bintext, *chbin;
 	char *offset;
@@ -69,7 +69,7 @@ char * TextoABinario(const char * text, size_t len)
 	// obtenter representación del texto
 	for(a=0; a<len; a++) {
 		// obtenter representación binaria del caracter
-		if(!(chbin=CharABinario(text[a]))) {
+		if(!(chbin=CharToBin(text[a]))) {
 			free(bintext);
 			return NULL;
 		}

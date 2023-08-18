@@ -44,3 +44,7 @@ run_score:
 # resitor
 run_resistor:
 	gcc -o resistor run/run_resistor.c resistor/resistor.c
+
+# bintext
+run_bintext:
+	gcc -o bintext run/run_bintext.c bintext/bintext.c
