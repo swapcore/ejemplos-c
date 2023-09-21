@@ -1,6 +1,6 @@
 /*
 	Serie de fibonacci
-	Copyright (c) 2022 Oscar Elías
+	Copyright (c) 2022 Oscar ElÃ­as
 	
 	This file is part of Ejemplos C.
 	
@@ -28,7 +28,7 @@ FIBONACCISTRUCT * GetFibonacci(int elems)
 	size_t len;
 	int a;
 	
-	// verificación de parametros
+	// verificaciÃ³n de parametros
 	if(elems<2||elems>LIMIT_FIBONACCI_NUMBERS) {
 		return NULL;
 	}

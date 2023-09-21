@@ -1,6 +1,6 @@
 /*
 	Texto en rectangulo
-	Copyright (c) 2022 Oscar Elías
+	Copyright (c) 2022 Oscar ElÃ­as
 	
 	This file is part of Ejemplos C.
 	
@@ -32,17 +32,17 @@ TEXTRECTSTRUCT * TextInRect(const char *str, int ch)
 	}
 	
 	if(!(len=strlen(str))) {
-		// el buffer no contiene texto (caractéres)
+		// el buffer no contiene texto (caractÃ©res)
 		return NULL;
 	}
 	
 	if(!(r=malloc(sizeof(TEXTRECTSTRUCT)))) {
-		// error de asignación de memoria
+		// error de asignaciÃ³n de memoria
 		return NULL;
 	}
 	
 	/* Obtener el ancho y alto del rectangulo
-	 * que contendrá el texto */
+	 * que contendrÃ¡ el texto */
 	r->width    = len+4;
 	r->height   = 5;
 	r->rectsize = ((len+4)*5)+1;

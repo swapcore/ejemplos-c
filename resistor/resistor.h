@@ -1,6 +1,6 @@
 /*
-	Informaci�n de resistor
-	Copyright (c) 2022 Oscar El�as
+	Información de resistor
+	Copyright (c) 2022 Oscar Elías
 	
 	This file is part of Ejemplos C.
 	

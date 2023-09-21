@@ -1,6 +1,6 @@
 /*
-	Calculo de área
-	Copyright (c) 2022 Oscar Elías
+	Calculo de Ã¡rea
+	Copyright (c) 2022 Oscar ElÃ­as
 	
 	This file is part of Ejemplos C.
 	

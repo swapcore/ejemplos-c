@@ -1,6 +1,6 @@
 /*
-	Calculo de área
-	Copyright (c) 2022 Oscar Elías
+	Calculo de Ã¡rea
+	Copyright (c) 2022 Oscar ElÃ­as
 	
 	This file is part of Ejemplos C.
 	
@@ -21,18 +21,18 @@
 
 #include "area.h"
 
-// obtener área de figura en un plano cartesiano
+// obtener Ã¡rea de figura en un plano cartesiano
 int GetCoordArea(COORDSTRUCT *vertex,
 	size_t elements, double *area)
 {
 	size_t a;
 	
-	// verificación de parametros
+	// verificaciÃ³n de parametros
 	if(!(vertex&&elements>=3)) {
 		return 0;
 	}
 	
-	// obtener área
+	// obtener Ã¡rea
 	for(a=0; a<elements; a++) 
 		*area += (vertex[a].x*vertex[(a+1)%elements].y);
 	for(a=0; a<elements; a++) 

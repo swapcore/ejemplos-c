@@ -1,6 +1,6 @@
 /*
 	Convertidor simple de numeros romanos
-	Copyright (c) 2022 Oscar Elías
+	Copyright (c) 2022 Oscar ElÃ­as
 	
 	This file is part of Ejemplos C.
 	
@@ -47,7 +47,7 @@ char * GetRomanNumber(int value)
 	int units;
 	int a;
 	
-	// revisión de paramatros
+	// revisiÃ³n de paramatros
 	if(!(value>=1&&value<4000)) {
 		// numero invalido
 		return NULL;
@@ -146,7 +146,7 @@ int RomanNumberToNumber(const char * str)
 	if(len<strspn(str,"IVXLCDM")) {
 		/* El buffer contiene caracteres que no
 		 * corresponden a alguna cifra en el 
-		 * sistema de numeración romana */
+		 * sistema de numeraciÃ³n romana */
 		return 0;
 	}
 	

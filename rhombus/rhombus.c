@@ -1,6 +1,6 @@
 /*
 	Dibujar rombo
-	Copyright (c) 2022 Oscar Elías
+	Copyright (c) 2022 Oscar ElÃ­as
 	
 	This file is part of Ejemplos C.
 	
@@ -48,7 +48,7 @@ RHOMBUSSTRUCT * CreateRhombus(int height)
 	}
 	memset(rhombus->bmpixels,0,h*h);
 	
-	// definiendo información del rombo
+	// definiendo informaciÃ³n del rombo
 	rhombus->width  = h;
 	rhombus->height = h;
 	

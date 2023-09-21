@@ -1,6 +1,6 @@
 /*
 	Ejemplo de memorama
-	Copyright (c) 2022 Oscar Elías
+	Copyright (c) 2022 Oscar ElÃ­as
 	
 	This file is part of Ejemplos C.
 	
@@ -85,7 +85,7 @@ MEMOSTRUCT * InitMemo(int numpairs)
 	MEMOSTRUCT *newmemo;
 	size_t memosize;
 	
-	// verificación de parametros
+	// verificaciÃ³n de parametros
 	if(!(numpairs>=MIN_NUMPAIRS||numpairs<=MAX_NUMPAIRS)) {
 		// rango de pares invalido
 		return NULL;
@@ -113,7 +113,7 @@ int ChooseMemoCards(MEMOSTRUCT *memo, int card1, int card2)
 	int flag=0;
 	int a,c1,c2;
 	
-	// verificación de parametros
+	// verificaciÃ³n de parametros
 	if(!memo) {
 		return 0;
 	}

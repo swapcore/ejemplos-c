@@ -1,6 +1,6 @@
 /*
-	Conversor de números romanos (Ejemplo de uso)
-	Copyright (c) 2022 Oscar Elías
+	Conversor de nÃºmeros romanos (Ejemplo de uso)
+	Copyright (c) 2022 Oscar ElÃ­as
 	
 	This file is part of Ejemplos C.
 	

@@ -1,6 +1,6 @@
 /*
 	Multiplo de un numero
-	Copyright (c) 2022 Oscar Elías
+	Copyright (c) 2022 Oscar ElÃ­as
 	
 	This file is part of Ejemplos C.
 

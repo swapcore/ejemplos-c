@@ -1,6 +1,6 @@
 /*
 	Calculo de factorial
-	Copyright (c) 2022 Oscar Elías
+	Copyright (c) 2022 Oscar ElÃ­as
 	
 	This file is part of Ejemplos C.
 	
@@ -24,9 +24,9 @@
 // obtener factorial de un numero
 uint32_t GetFactorial(uint32_t value)
 {
-	/* Esta función no obtendra factoriales mayores a 12! ya que
-	 * el numero resultante sería demasiado grande para ser
-	 * almacenado en una variable entera de 32 bits y ocacionaría
+	/* Esta funciÃ³n no obtendra factoriales mayores a 12! ya que
+	 * el numero resultante serÃ­a demasiado grande para ser
+	 * almacenado en una variable entera de 32 bits y ocacionarÃ­a
 	 * un desbordamiento de enteros. */
 	uint32_t factorial=1;
 	uint32_t a;

@@ -1,6 +1,6 @@
 /*
-	Uni髇 de conjuntos
-	Copyright (c) 2022 Oscar El韆s
+	Uni贸n de conjuntos
+	Copyright (c) 2022 Oscar El铆as
 	
 	This file is part of Ejemplos C.
 	
@@ -50,7 +50,7 @@ int AddConjunto(CONJUNTO *pset, int value)
 	// reasignar memoria para el conjunto
 	c=realloc(pset->nums,(pset->elements+1)*sizeof(int));
 	if(!c) {
-		// error de asignaci髇 de memoria
+		// error de asignaci贸n de memoria
 		free(pset->nums);
 		pset->nums = NULL;
 		pset->elements = 0;
@@ -80,11 +80,11 @@ CONJUNTO * UnirConjunto(CONJUNTO *set1, CONJUNTO *set2)
 	}
 	
 	if(!set1->nums&&!set2->nums) {
-		// no har elementos para insertar en la uni髇
+		// no har elementos para insertar en la uni贸n
 		return NULL;
 	}
 	
-	// crear conjunto uni髇 de set1 y set2
+	// crear conjunto uni贸n de set1 y set2
 	if(!(uset=InitConjunto())) {
 		return NULL;
 	}
@@ -104,7 +104,7 @@ CONJUNTO * UnirConjunto(CONJUNTO *set1, CONJUNTO *set2)
 	return uset;
 }
 
-// intersecci髇 de conjuntos
+// intersecci贸n de conjuntos
 CONJUNTO * InterseccionConjunto(CONJUNTO *set1, CONJUNTO *set2)
 {
 	CONJUNTO *iset;
@@ -115,7 +115,7 @@ CONJUNTO * InterseccionConjunto(CONJUNTO *set1, CONJUNTO *set2)
 		return NULL;
 	}
 	
-	// crear conjunto intersecci髇 de set1 y set2
+	// crear conjunto intersecci贸n de set1 y set2
 	if(!(iset=InitConjunto())) {
 		return NULL;
 	}
@@ -125,7 +125,7 @@ CONJUNTO * InterseccionConjunto(CONJUNTO *set1, CONJUNTO *set2)
 		return iset;
 	}
 	
-	// obtener intersecci髇 de conjuntos
+	// obtener intersecci贸n de conjuntos
 	for(a=0; a<set1->elements; a++) {
 		for(b=0; b<set2->elements; b++) {
 			if(set1->nums[a]==set2->nums[b]) {

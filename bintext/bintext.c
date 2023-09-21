@@ -1,6 +1,6 @@
 /*
 	Conversor de texto a binario
-	Copyright (c) 2022 Oscar El韆s
+	Copyright (c) 2022 Oscar El铆as
 	
 	This file is part of Ejemplos C.
 
@@ -21,19 +21,19 @@
 
 #include "bintext.h"
 
-// obtenter representaci髇 binaria de un caracter
+// obtenter representaci贸n binaria de un caracter
 char * CharToBin(int ch)
 {
 	char *chbin;
 	int a;
 	
-	/* Reservar memoria para la representaci髇
+	/* Reservar memoria para la representaci贸n
 	 * binaria del caracter */
 	if(!(chbin=calloc(8+1,1))) {
 		return NULL;
 	}
 	
-	// obtenter representaci髇 del caracter
+	// obtenter representaci贸n del caracter
 	for(a=0; a<8; a++) {
 		itoa((ch>>(7-a))&1,chbin+a,10);
 	}
@@ -41,7 +41,7 @@ char * CharToBin(int ch)
 	return chbin; 
 }
 
-// obtenter representaci髇 binaria de un texto
+// obtenter representaci贸n binaria de un texto
 char * TextToBin(const char * text, size_t len)
 {
 	char *bintext, *chbin;
@@ -58,7 +58,7 @@ char * TextToBin(const char * text, size_t len)
 		return NULL;
 	}
 	
-	/* Reservar memoria para la representaci髇
+	/* Reservar memoria para la representaci贸n
 	 * binaria del texto */
 	if(!(bintext=calloc((len*8)+(len-1)+1,1))) {
 		return NULL;
@@ -66,9 +66,9 @@ char * TextToBin(const char * text, size_t len)
 	
 	offset=bintext;
 	
-	// obtenter representaci髇 del texto
+	// obtenter representaci贸n del texto
 	for(a=0; a<len; a++) {
-		// obtenter representaci髇 binaria del caracter
+		// obtenter representaci贸n binaria del caracter
 		if(!(chbin=CharToBin(text[a]))) {
 			free(bintext);
 			return NULL;

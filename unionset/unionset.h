@@ -1,6 +1,6 @@
 /*
-	Unión de conjuntos
-	Copyright (c) 2022 Oscar Elías
+	UniÃ³n de conjuntos
+	Copyright (c) 2022 Oscar ElÃ­as
 	
 	This file is part of Ejemplos C.
 	

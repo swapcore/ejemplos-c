@@ -1,6 +1,6 @@
 /*
 	Ejemplo de un interprete de codigo morse
-	Copyright (c) 2022 Oscar Elías
+	Copyright (c) 2022 Oscar ElÃ­as
 	
 	This file is part of Ejemplos C.
 	
@@ -64,8 +64,8 @@ MORSECODE CharToMorse(wchar_t ch)
 		case 0x2E: return POINT_MORSE_CODE;      // Punto
 		case 0x2C: return COMMA_MORSE_CODE;      // Coma
 		case 0x22: return QUOTE_MORSE_CODE;      // Commilla doble
-		case 0x3F: return QUESTION_MORSE_CODE;   // Interrogación
-		case 0xD1: return NN_MORSE_CODE;         // Ñ
+		case 0x3F: return QUESTION_MORSE_CODE;   // InterrogaciÃ³n
+		case 0xD1: return NN_MORSE_CODE;         // Ã‘
 		case 0x20: return WORD_SEPARATOR;        // Espacio en blanco
 	}
 	
@@ -115,8 +115,8 @@ wchar_t MorseToChar(MORSECODE ch)
 		case POINT_MORSE_CODE:    return 0x2E;   // Punto
 		case COMMA_MORSE_CODE:    return 0x2C;   // Coma
 		case QUOTE_MORSE_CODE:    return 0x22;   // Comilla doble
-		case QUESTION_MORSE_CODE: return 0x3F;   // Interrogación
-		case NN_MORSE_CODE:       return 0xD1;   // Ñ
+		case QUESTION_MORSE_CODE: return 0x3F;   // InterrogaciÃ³n
+		case NN_MORSE_CODE:       return 0xD1;   // Ã‘
 		case WORD_SEPARATOR:      return 0x20;   // Espacio en blanco
 	}
 	
@@ -128,7 +128,7 @@ int ReallocMorseBuffer(MORSECODE **buf, size_t elements)
 {
 	MORSECODE *c;
 	
-	// revisión de parametros
+	// revisiÃ³n de parametros
 	if(elements<0) return 0;
 	
 	// agregar o eliminar elementos
@@ -147,7 +147,7 @@ wchar_t * TextToMayus(const wchar_t *str)
 	wchar_t *c;
 	size_t wlen, a;
 	
-	// verificación de parametros
+	// verificaciÃ³n de parametros
 	if(!str) return NULL;
 	if(!(wlen=wcslen(str))) return NULL;
 	
@@ -171,7 +171,7 @@ MORSECODE * TextToMorse(const wchar_t *str)
 	size_t buffsize,a;
 	size_t wlen;
 	
-	// verificación de parametros
+	// verificaciÃ³n de parametros
 	if(!str) {
 		return NULL;
 	}

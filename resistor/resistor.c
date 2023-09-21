@@ -1,6 +1,6 @@
 /*
-	Informaci髇 de resistor
-	Copyright (c) 2022 Oscar El韆s
+	Informaci贸n de resistor
+	Copyright (c) 2022 Oscar El铆as
 	
 	This file is part of Ejemplos C.
 	
@@ -98,7 +98,7 @@ RESISTORINFO * GetResistorInfo(COLORBAND *bands, int numbands)
 	size_t len=0;
 	
 	if(!bands) {
-		// o hay bandas de color!
+		// 隆No hay bandas de color!
 		return NULL;
 	}
 	
@@ -111,7 +111,7 @@ RESISTORINFO * GetResistorInfo(COLORBAND *bands, int numbands)
 		return NULL;
 	}
 	
-	// reservar memoria para la informaci髇 del resistor
+	// reservar memoria para la informaci贸n del resistor
 	len += sizeof(RESISTORINFO);
 	len += ((numbands-1)*sizeof(COLORBAND));
 	if(!(r=malloc(len))) {
@@ -119,7 +119,7 @@ RESISTORINFO * GetResistorInfo(COLORBAND *bands, int numbands)
 	}
 	memset(r,0,len);
 	
-	// obtener informaci髇 del resistor
+	// obtener informaci贸n del resistor
 	switch(numbands) {
 		// resistor normal
 		case 4: {
@@ -129,7 +129,7 @@ RESISTORINFO * GetResistorInfo(COLORBAND *bands, int numbands)
 			r->tolerance   = GetTolerance(bands[3]);
 			break;
 		}
-		// resistor de presici髇
+		// resistor de presici贸n
 		case 5: {
 			r->number     += (double)(bands[0])*100.00;
 			r->number     += (double)(bands[1])*10.00;
@@ -164,7 +164,7 @@ SMBRESISTORINFO * GetSMBResistorInfo(const char *code)
 		return NULL;
 	}
 
-	// reservar memoria para la informaci髇 del resistor
+	// reservar memoria para la informaci贸n del resistor
 	if(!(r=calloc(1,sizeof(SMBRESISTORINFO)))) {
 		return NULL;
 	}

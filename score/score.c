@@ -1,6 +1,6 @@
 /*
 	Resultados de calificaciones
-	Copyright (c) 2022 Oscar El韆s
+	Copyright (c) 2022 Oscar El铆as
 	
 	This file is part of Ejemplos C.
 	
@@ -21,14 +21,14 @@
 
 #include "score.h"
 
-// obtener informaci髇 de calificaciones
+// obtener informaci贸n de calificaciones
 SCOREINFO * GetScoreInfo(double *list, size_t elems)
 {
 	SCOREINFO * results;
 	int listvalid=1;
 	size_t a;
 	
-	// revisi髇 de parametros
+	// revisi贸n de parametros
 	if(!(list&&elems>2)) {
 		return NULL;
 	}
@@ -40,7 +40,7 @@ SCOREINFO * GetScoreInfo(double *list, size_t elems)
 	}
 	memset(results,0,sizeof(SCOREINFO));
 	
-	/* Verificar si la calificaci髇 correponde al
+	/* Verificar si la calificaci贸n correponde al
 	 * rango 0.00 a 10.00 */
 	for(a=0; a<elems; a++) {
 		if(!(list[a]>=MIN_CUALIFICATION&&
@@ -56,12 +56,12 @@ SCOREINFO * GetScoreInfo(double *list, size_t elems)
 		return NULL;
 	}
 	
-	/* Aplicar truco para encontra la calificaci髇
+	/* Aplicar truco para encontra la calificaci贸n
 	 * mas baja de la lista :) */
 	results->lowrating = MAX_CUALIFICATION;
 	
-	/* leer cada calificaci髇 de la lista en busca de
-	 * la informaci髇 requerida */
+	/* leer cada calificaci贸n de la lista en busca de
+	 * la informaci贸n requerida */
 	for(a=0; a<elems; a++) {
 		/* (1) Contar las calificaciones aprobatorias
 		 * y reprobatorias de la lista */
@@ -72,12 +72,12 @@ SCOREINFO * GetScoreInfo(double *list, size_t elems)
 			results->failed++;
 		}
 		
-		// (2) Encontrar la calificaci髇 mas alta
+		// (2) Encontrar la calificaci贸n mas alta
 		if(results->highrating < list[a]) {
 			results->highrating = list[a];
 		}
 		
-		// (3) Encontrar la calificaci髇 mas baja
+		// (3) Encontrar la calificaci贸n mas baja
 		if(results->lowrating > list[a]) {
 			results->lowrating = list[a];
 		}

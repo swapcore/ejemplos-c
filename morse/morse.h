@@ -1,6 +1,6 @@
 /*
 	Ejemplo de un interprete de codigo morse
-	Copyright (c) 2022 Oscar Elías
+	Copyright (c) 2022 Oscar ElÃ­as
 	
 	This file is part of Ejemplos C.
 	
@@ -78,9 +78,9 @@ typedef uint32_t MORSECODE;
 #define COMMA_MORSE_CODE 0xEEA77    // Coma
 #define QUOTE_MORSE_CODE 0x5D5D     // Commilla doble
 
-#define QUESTION_MORSE_CODE 0x5775  // Interrogación
+#define QUESTION_MORSE_CODE 0x5775  // InterrogaciÃ³n
 
-#define NN_MORSE_CODE 0x1DD77    // Ñ
+#define NN_MORSE_CODE 0x1DD77    // Ã‘
 #define CH_MORSE_CODE 0x7777     // Ch
 
 #define LETTER_SEPARATOR 0xFFFFFFF8   // Separador de letras

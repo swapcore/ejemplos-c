@@ -1,5 +1,5 @@
 #	Makefile de Ejemplos C
-#	Copyright (c) 2022 Oscar El�as
+#	Copyright (c) 2022 Oscar Elías
 #	
 #	This file is part of Ejemplos C.
 #	
