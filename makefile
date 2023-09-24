@@ -48,3 +48,7 @@ run_resistor:
 # bintext
 run_bintext:
 	gcc -o bintext run/run_bintext.c bintext/bintext.c
+
+# Ejercicio 1: Insertar y leer en 5 listas enlazadas
+run_e001:
+	gcc -o e001 exercises/e001.c
